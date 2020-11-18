@@ -263,7 +263,6 @@ addEventListener("mouseup", (e) => {
       15
     );
     const r = size > 12 ? size : 5;
-    //   console.log(r);
 
     const speed = r > 12 ? 4 : 5;
     const velocity = {
@@ -334,7 +333,6 @@ startBtn.addEventListener("click", () => {
   animate();
   spawnEnemies();
   modalEl.style.display = "none";
-  console.log('hi')
 });
 
 // let gamePaused = true
