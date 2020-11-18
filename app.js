@@ -66,7 +66,7 @@ class Particle extends Enemy {
   }
 
   updateParticle() {
-    this.drawParticle();
+    this.drawParticle(); //nice
     this.v.x *= friction;
     this.v.y *= friction;
     this.x += this.v.x;
@@ -100,7 +100,7 @@ function init() {
   particles = [];
   enemies = [];
   score = 0;
-  scoreEl.innerHTML = "score";
+  scoreEl.innerHTML = score;
   highScore = localStorage.getItem("hiScore");
   highScoreEl.innerHTML = highScore;
 }
