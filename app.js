@@ -334,6 +334,7 @@ startBtn.addEventListener("click", () => {
   animate();
   spawnEnemies();
   modalEl.style.display = "none";
+  console.log('hi')
 });
 
 // let gamePaused = true
