@@ -100,7 +100,7 @@ function init() {
   particles = [];
   enemies = [];
   score = 0;
-  scoreEl.innerHTML = score;
+  scoreEl.innerHTML = "score";
   highScore = localStorage.getItem("hiScore");
   highScoreEl.innerHTML = highScore;
 }
