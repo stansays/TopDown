@@ -66,7 +66,7 @@ class Particle extends Enemy {
   }
 
   updateParticle() {
-    this.drawParticle(); //nice
+    this.drawParticle();
     this.v.x *= friction;
     this.v.y *= friction;
     this.x += this.v.x;
@@ -182,8 +182,8 @@ function animate() {
     enemy.update();
     projectiles.forEach((projectile, projectileIndex) => {
       let enemyID = enemy.ID;
-      const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y);
-      if (dist <= enemy.r + projectile.r + 1) {
+      const dist_sq = (projectile.x - enemy.x) ** 2 + (projectile.y - enemy.y) ** 2;
+      if (dist_sq <= (enemy.r + projectile.r + 1) ** 2) {
         for (let i = 0; i < Math.min(enemy.r * 2, 15); i++) {
           //generate particle effects
           particles.push(
@@ -231,7 +231,7 @@ function animate() {
         }
       }
     });
-    if (Math.hypot(x0 - enemy.x, y0 - enemy.y) < enemy.r + player.r - 2) {
+    if ((x0 - enemy.x) ** 2 + (y0 - enemy.y) ** 2 < (enemy.r + player.r - 2) ** 2) {
       //player is hit
       cancelAnimationFrame(animationID);
       modalEl.style.display = "flex";
